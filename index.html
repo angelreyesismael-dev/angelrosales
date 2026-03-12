@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Curriculum Vitae - Angel Ismael Rosales Reyes</title>
+    <style>
+        body {
+            background-color: #003366;
+            color: white;
+            font-family: sans-serif;
+            padding: 20px;
+            margin-bottom: 120px;
+        }
+        h1, h2 { color: white; }
+        a { color: #00CCFF; text-decoration: none; }
+        
+        .media-container {
+            margin-top: 15px;
+            border: 2px solid #00CCFF;
+            max-width: 500px;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+        video, img {
+            width: 100%;
+            display: block;
+        }
+
+        .menu-audio {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #001a33;
+            padding: 15px;
+            border-top: 2px solid white;
+            text-align: center;
+            z-index: 1000;
+        }
+        .boton-audio {
+            padding: 8px 15px;
+            margin: 0 10px;
+            cursor: pointer;
+            background-color: #00CCFF;
+            color: black;
+            border: none;
+            font-weight: bold;
+        }
+        .boton-rojo {
+            background-color: #ff4d4d;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<audio id="introSound" src="audios/brvhrtz-stab-f-01-brvhrtz-224599 (1).mp3"></audio>
+<audio id="clickSound" src="audios/soundreality-downfall-3-208028 (1).mp3"></audio>
+
+<h1 id="inicio">CURRICULUM VITAE</h1>
+
+<h2>Menú</h2>
+<a href="#datos" onclick="playClick()">Datos Personales</a><br>
+<a href="#estudios" onclick="playClick()">Estudios Académicos</a><br>
+<a href="#trabajo" onclick="playClick()">Experiencia Laboral</a><br>
+<a href="#hobbies" onclick="playClick()">Hobbies e Intereses</a><br>
+<a href="#referencias" onclick="playClick()">Referencias</a><br><br>
+
+<p>
+<b>Perfil Profesional:</b><br>
+Soy un joven dinámico y comprometido, actualmente cursando el último año de bachillerato. Cuento con una sólida base de disciplina adquirida a través del trabajo físico y el estudio constante.
+</p>
+
+<hr>
+
+<h2 id="datos">Datos Personales</h2>
+<p><b>Nombre:</b> Angel Ismael Rosales Reyes</p>
+<p><b>Dirección:</b> Barcenas, Villa Nueva</p>
+<p><b>Teléfono:</b> 35778307</p>
+<p><b>Email:</b> angelreyesismael@gmail.com</p>
+<img src="imagenes/WhatsApp Image 2026-03-10 at 10.51.15 PM.jpeg" style="max-width: 250px; border: 3px solid white;" alt="Foto de Perfil">
+<br><br>
+<a href="#inicio" style="color: yellow;" onclick="playClick()">[ Volver al Menú ]</a>
+
+<h2 id="estudios">Estudios Académicos</h2>
+<p>
+<b>• Actualidad: Quinto Bachillerato en Computación</b><br>
+Instituto Profesional de Computación (IPC). Especializado en sistemas informáticos, lógica de programación y mantenimiento de equipos.
+</p>
+<div style="margin-top: 10px;">
+    <img src="imagenes/ipc.jfif" style="max-width: 200px; border-radius: 5px;" alt="Logo IPC">
+</div>
+<br>
+<a href="#inicio" style="color: yellow;" onclick="playClick()">[ Volver al Menú ]</a>
+
+<h2 id="trabajo">Experiencia Laboral</h2>
+<p>
+<b>• Auxiliar de Albañilería (2022 - Presente):</b><br>
+Apoyo en obras civiles, preparación de mezclas, levantado de muros y lectura de planos.
+</p>
+<div class="media-container">
+    <video controls loop muted>
+        <source src="videos/chamba.mp4" type="video/mp4">
+        Tu navegador no soporta videos.
+    </video>
+    <p style="font-size: 12px; text-align: center; margin: 5px;">Experiencia en Construcción (La Chamba)</p>
+</div>
+<br>
+<a href="#inicio" style="color: yellow;" onclick="playClick()">[ Volver al Menú ]</a>
+
+<h2 id="hobbies">Hobbies e Intereses</h2>
+<ul>
+    <li><b>Hollow Knight:</b> Estrategia y resolución de problemas en videojuegos.</li>
+    <li><b>Basquetbol:</b> Deporte en equipo y condición física.</li>
+    <li><b>Andar en Bicicleta:</b> Me apasiona el ciclismo de montaña (MTB), lo cual me ayuda a mantener la disciplina, el enfoque y una excelente salud física.</li>
+</ul>
+<div class="media-container">
+    <video controls loop muted>
+        <source src="videos/WhatsApp Video 2026-03-12 at 9.31.20 AM.mp4" type="video/mp4">
+        Tu navegador no soporta videos.
+    </video>
+    <p style="font-size: 12px; text-align: center; margin: 5px;">Ciclismo MTB - Hobbies</p>
+</div>
+<br>
+<a href="#inicio" style="color: yellow;" onclick="playClick()">[ Volver al Menú ]</a>
+
+<h2 id="referencias">Referencias</h2>
+<p><b>Sandra Rosales</b> - Tel: 52352244</p>
+<p><b>Luis Rosales</b> - Tel: 47885533</p>
+<br>
+<a href="#inicio" style="color: yellow;" onclick="playClick()">[ Volver al Menú ]</a>
+
+<div class="menu-audio">
+    <span><b>Música:</b></span>
+    <button class="boton-audio" onclick="controlarAudio('introSound')">Play/Pausa Entrada</button>
+    <button class="boton-audio" onclick="controlarAudio('clickSound')">Play/Pausa Clic</button>
+    <button class="boton-audio boton-rojo" onclick="detenerTodo()">Silencio Total</button>
+</div>
+
+<script>
+    function controlarAudio(id) {
+        var audio = document.getElementById(id);
+        if (audio.paused) { audio.play(); } else { audio.pause(); }
+    }
+    function playClick() {
+        var sonido = document.getElementById("clickSound");
+        sonido.currentTime = 0;
+        sonido.play();
+    }
+    function detenerTodo() {
+        var a1 = document.getElementById("introSound");
+        var a2 = document.getElementById("clickSound");
+        a1.pause(); a1.currentTime = 0;
+        a2.pause(); a2.currentTime = 0;
+    }
+</script>
+
+</body>
+</html> 
